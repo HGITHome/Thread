@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.exception.ResponseEnum;
+
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -21,9 +23,15 @@ public class Thread1 {
 
         private final Object object = new Object();
         public void accressResource(){
+            try {
+                ResponseEnum.test.assertNotNull(null);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+
             synchronized (object){
                 try {
-                    TimeUnit.MINUTES.sleep(1);
+                    TimeUnit.SECONDS.sleep(1);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
