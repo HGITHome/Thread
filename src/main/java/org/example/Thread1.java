@@ -14,11 +14,15 @@ import java.util.concurrent.TimeUnit;
  */
 public class Thread1 {
 
+
     public static void main(String[] args) {
-        final Thread1 mutex = new Thread1();
-        for (int i = 0 ; i < 5 ; i ++){
-            new Thread(mutex::accressResource).start();
-        }
+//        final Thread1 mutex = new Thread1();
+//        for (int i = 0 ; i < 5 ; i ++){
+//            new Thread(mutex::accressResource).start();
+//            new Thread().getThreadGroup().activeCount();
+//        }
+//        System.out.println(Test.max);
+        System.out.println(System.getProperty("sun.boot.class.path"));
     }
 
         private final Object object = new Object();
